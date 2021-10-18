@@ -15,7 +15,7 @@
                             <td>
                                 <router-link class="button" :to="'/revista/'+rev.id"><img src="./images/font-eye.png" style="width:20px"></router-link>
                                 <router-link class="button" :to="'/revista/edit/'+rev.id"><img src="./images/font-edit.png" style="width:20px"></router-link>
-                                <router-link class="button" :to="'/revista/delete/'+rev.id"><img src="./images/delete.png" style="width:20px"></router-link>
+                               <button type="button" class="btn btn-primary" v-on:click="deleteRevista(rev.id)">Delete</button>
                             </td>
                         </tr>
                     </tbody>
@@ -43,7 +43,19 @@ module.exports = {
             .then((data) => {
                 this.revistas = data;
             })
-        }  
+        },
+        deleteRevista(id){
+            console.log('Hola1 '+id);
+            const opc = {
+                method:"POST",
+                headers:{"Content-Type": "application/json"}
+            };
+            fetch("https://p1-sd-revistas-microservice.herokuapp.com/revista/delete/"+id,opc)
+                .then((data) => {
+                console.log('Print1: ' + data.name);
+            })
+
+        }
     }
 }
 
