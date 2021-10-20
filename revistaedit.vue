@@ -44,7 +44,7 @@
                 <tbody>
                     <tr v-for="cha in this.revista.characters">                       
                         <td>
-                            <li><a :href="'https://p1-sd-revistas-microservice.herokuapp.com/revista/'+cha.id">{{cha.name}}</li>
+                            <li><a :href="'https://characters-p1-sd.netlify.app/#/personaje/'+cha.id">{{cha.name}}</li>
                             <!-- Cambiar por el microfront end -->
                         </td>
                     </tr>                  

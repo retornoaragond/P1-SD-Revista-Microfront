@@ -31,7 +31,7 @@
             <tbody>
                 <tr v-for="char in this.revista.characters">                       
                     <td>
-                        <li><a :href="'https://p1-sd-revistas-microservice.herokuapp.com/revista/'+char.character_id">{{char.character_name}}</li>
+                        <li><a :href="'https://characters-p1-sd.netlify.app/#/personaje/'+char.character_id">{{char.character_name}}</li>
                         <!-- Cambiar por el microfront end -->
                     </td>
                 </tr>
